@@ -5,31 +5,43 @@
   <title>TrustTune Plans</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #fff;
+      margin: 0;
       padding: 20px;
+      background-color: #0e0e0e;
+      color: #f1f1f1;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1 {
+      color: #bb86fc;
+      text-align: center;
+    }
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
     }
     .plan {
-      border: 1px solid #333;
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 10px 0;
+      background-color: #1f1f1f;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .plan h3 {
       margin: 0;
-      color: #e50914;
+      font-size: 18px;
+      color: #ffffff;
     }
     .plan p {
       font-size: 14px;
       color: #ccc;
+      margin: 10px 0 15px;
     }
-    button {
-      background: #e50914;
-      border: none;
-      padding: 8px 16px;
+    .plan button {
+      background-color: #bb86fc;
       color: white;
+      border: none;
+      padding: 8px 14px;
       border-radius: 8px;
       cursor: pointer;
     }
@@ -37,10 +49,26 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #333;
-      border-radius: 12px;
-      padding: 15px;
-      display: none;
+      background: #222;
+      border-radius: 16px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px #000;
+    }
+    #cart h3 {
+      margin-top: 0;
+      font-size: 16px;
+    }
+    #cart ul {
+      padding-left: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    #cart button {
+      margin-top: 10px;
+      width: 100%;
+      background-color: #03dac6;
+      color: #000;
     }
     #whatsapp {
       position: fixed;
@@ -62,48 +90,92 @@
       bottom: 20px;
       left: 20px;
       font-size: 14px;
-      color: #888;
+      color: #aaa;
+    }
+    .admin-link a {
+      color: #aaa;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>🔥 TrustTune OTT & Software Plans</h1>
+  <h1>🔥 TrustTune Premium Plans</h1>
 
-  <div class="plan">
-    <h3>Netflix – ₹159/m</h3>
-    <p>Shared plan with 2 screen support.</p>
-    <button onclick="addToCart('Netflix – ₹159/m')">Add to Cart</button>
-  </div>
+  <div class="plan-grid">
 
-  <div class="plan">
-    <h3>Adobe Creative – ₹3699/year</h3>
-    <p>Full access to Adobe apps on your mail.</p>
-    <button onclick="addToCart('Adobe – ₹3699/y')">Add to Cart</button>
-  </div>
+    <div class="plan">
+      <h3>Netflix – ₹159/month</h3>
+      <p>Shared 2-screen Netflix plan for personal streaming.</p>
+      <button onclick="addToCart('Netflix – ₹159/month')">Add to Cart</button>
+    </div>
 
-  <div class="plan">
-    <h3>ChatGPT – ₹99/m</h3>
-    <p>Access to ChatGPT Pro shared login.</p>
-    <button onclick="addToCart('ChatGPT – ₹99/m')">Add to Cart</button>
-  </div>
+    <div class="plan">
+      <h3>Adobe Creative – ₹3699/year</h3>
+      <p>Full access to Adobe suite on your mail. Great for creators!</p>
+      <button onclick="addToCart('Adobe – ₹3699/year')">Add to Cart</button>
+    </div>
 
-  <div class="plan">
-    <h3>Prime Video – ₹150 for 6 months</h3>
-    <p>2 device support, separate profiles.</p>
-    <button onclick="addToCart('Prime Video – ₹150/6m')">Add to Cart</button>
-  </div>
+    <div class="plan">
+      <h3>ChatGPT Pro – ₹99/month</h3>
+      <p>Premium AI access via shared login. Instant replies, pro mode.</p>
+      <button onclick="addToCart('ChatGPT Pro – ₹99/month')">Add to Cart</button>
+    </div>
 
-  <div class="plan">
-    <h3>YouTube Premium + Prime – ₹45/m</h3>
-    <p>Shared access on your email.</p>
-    <button onclick="addToCart('YouTube + Prime – ₹45/m')">Add to Cart</button>
-  </div>
+    <div class="plan">
+      <h3>Prime Video – ₹150/6 months</h3>
+      <p>2 device access. Shared securely with separate profiles.</p>
+      <button onclick="addToCart('Prime – ₹150/6m')">Add to Cart</button>
+    </div>
 
-  <div class="plan">
-    <h3>Combo: Jio + Zee5 + SonyLiv – ₹99/m</h3>
-    <p>All 3 on your number (5 devices supported).</p>
-    <button onclick="addToCart('Combo Jio/ZEE5/Sony – ₹99/m')">Add to Cart</button>
+    <div class="plan">
+      <h3>Prime Video – ₹49/month</h3>
+      <p>Affordable streaming for solo users. Good quality access.</p>
+      <button onclick="addToCart('Prime – ₹49/month')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>Canva Pro – ₹95/3 months</h3>
+      <p>Design like a pro on your email ID.</p>
+      <button onclick="addToCart('Canva – ₹95/3m')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>Canva Pro – ₹299/year</h3>
+      <p>Ultimate yearly plan for creators and students.</p>
+      <button onclick="addToCart('Canva – ₹299/year')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>YouTube Premium – ₹45/month</h3>
+      <p>Ad-free YouTube & music. Shared on your mail.</p>
+      <button onclick="addToCart('YouTube – ₹45/month')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>Jio + Zee5 + SonyLiv – ₹99/month</h3>
+      <p>Combo on your number. 5 device support.</p>
+      <button onclick="addToCart('Combo – ₹99/month')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>Zee5 – ₹75/month</h3>
+      <p>Regional content and movies. Shared login.</p>
+      <button onclick="addToCart('Zee5 – ₹75/month')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>SonyLiv – ₹55/month</h3>
+      <p>Sports, serials and originals. Single user access.</p>
+      <button onclick="addToCart('SonyLiv – ₹55/month')">Add to Cart</button>
+    </div>
+
+    <div class="plan">
+      <h3>YouTube + Prime Combo – ₹45/month</h3>
+      <p>Both services bundled for the price of one. Shared login.</p>
+      <button onclick="addToCart('YT+Prime – ₹45/month')">Add to Cart</button>
+    </div>
+
   </div>
 
   <div id="cart">
@@ -113,24 +185,29 @@
   </div>
 
   <div id="whatsapp" onclick="window.location.href='https://wa.me/919844976945'">💬</div>
-  <div class="admin-link"><a href="admin.html" style="color:#888;">Admin? Login here</a></div>
+  <div class="admin-link"><a href="admin.html">Admin? Login here</a></div>
 
   <script>
     const cart = [];
     const prices = {
-      "Netflix – ₹159/m": 159,
-      "Adobe – ₹3699/y": 3699,
-      "ChatGPT – ₹99/m": 99,
-      "Prime Video – ₹150/6m": 150,
-      "YouTube + Prime – ₹45/m": 45,
-      "Combo Jio/ZEE5/Sony – ₹99/m": 99
+      "Netflix – ₹159/month": 159,
+      "Adobe – ₹3699/year": 3699,
+      "ChatGPT Pro – ₹99/month": 99,
+      "Prime – ₹150/6m": 150,
+      "Prime – ₹49/month": 49,
+      "Canva – ₹95/3m": 95,
+      "Canva – ₹299/year": 299,
+      "YouTube – ₹45/month": 45,
+      "Combo – ₹99/month": 99,
+      "Zee5 – ₹75/month": 75,
+      "SonyLiv – ₹55/month": 55,
+      "YT+Prime – ₹45/month": 45
     };
 
     function addToCart(item) {
       cart.push(item);
       document.getElementById("cartCount").innerText = cart.length;
       updateCartList();
-      document.getElementById("cart").style.display = "block";
     }
 
     function updateCartList() {
@@ -154,4 +231,4 @@
   </script>
 
 </body>
-</html>
+  </html>
