@@ -1,80 +1,171 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Subscription Plans</title>
+  <style>
+    /* CSS Variables for Modern Blue & Orange Theme */
+    :root {
+      --color-primary: #0055A5;
+      --color-secondary: #FF7A00;
+      --color-accent: #FFD700;
+      --color-bg: #F0F4F8;
+      --color-text: #333333;
+    }/* Basic reset & typography */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  font-family: 'Segoe UI', Roboto, sans-serif; 
+  background: var(--color-bg); 
+  color: var(--color-text); 
+}
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+/* Page heading */
+h1 { 
+  text-align: center; 
+  margin-bottom: 30px; 
+  font-size: 2rem; 
+  color: var(--color-primary); 
+}
+
+/* Grid of cards */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Individual plan card */
+.plan-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid var(--color-primary);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3); /* var(--color-accent) in RGBA */
+}
+
+.plan-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--color-secondary);
+}
+.plan-card .price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--color-primary);
+}
+.plan-card .duration {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+  </style>
 </head>
-<body class="bg-gray-50 p-8 min-h-screen">
-  <h1 class="text-3xl font-bold mb-6 text-center">Choose Your Subscription</h1>  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- YouTube Premium -->
-    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-      <h2 class="text-xl font-semibold mb-4">YouTube Premium</h2>
-      <p class="mb-4 text-gray-700">Ad-free videos, background play, and downloads.</p>
-      <p class="text-2xl font-bold">₹45<span class="text-base font-medium">/month</span></p>
-      <button class="mt-4 w-full rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2">Subscribe</button>
-    </div><!-- Amazon Prime Video -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">Amazon Prime Video</h2>
-  <p class="mb-4 text-gray-700">Unlimited streaming of movies and TV shows.</p>
-  <p class="text-2xl font-bold">₹49<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- JioCinema (Hotstar) -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">JioCinema (Hotstar)</h2>
-  <p class="mb-4 text-gray-700">Live sports, movies, and original series.</p>
-  <p class="text-2xl font-bold">₹75<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- Zee5 -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">Zee5</h2>
-  <p class="mb-4 text-gray-700">Exclusive Indian TV shows, movies, and originals.</p>
-  <p class="text-2xl font-bold">₹65<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- Netflix -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">Netflix</h2>
-  <p class="mb-4 text-gray-700">Worldwide hits, series, and original productions.</p>
-  <p class="text-2xl font-bold">₹159<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-red-600 hover:bg-red-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- ChatGPT Plus -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">ChatGPT Plus</h2>
-  <p class="mb-4 text-gray-700">Faster responses and priority access.</p>
-  <p class="text-2xl font-bold">₹99<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- Adobe Creative Cloud -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">Adobe Creative Cloud</h2>
-  <p class="mb-4 text-gray-700">Access to Photoshop, Illustrator, and more.</p>
-  <p class="text-2xl font-bold">₹3699<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-red-600 hover:bg-red-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
-<!-- Combo Pack -->
-<div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
-  <h2 class="text-xl font-semibold mb-4">Combo Pack</h2>
-  <ul class="mb-4 list-disc list-inside text-gray-700">
-    <li>Zee5</li>
-    <li>JioHotstar</li>
-    <li>SonyLIV</li>
-    <li>Prime Video</li>
-    <li>YouTube Premium</li>
-  </ul>
-  <p class="text-2xl font-bold">Custom Pricing<span class="text-base font-medium">/month</span></p>
-  <button class="mt-4 w-full rounded-2xl bg-green-600 hover:bg-green-700 text-white font-semibold py-2">Subscribe</button>
-</div>
-
+<body>  <div class="container">
+    <h1>Our Subscription Plans</h1>
+    <div class="plans-grid"><div class="plan-card">
+    <h3>JioHotstar</h3>
+    <div class="price">₹75</div>
+    <div class="duration">per month</div>
   </div>
-</body>
-  </html>
+
+  <div class="plan-card">
+    <h3>Amazon Prime Video</h3>
+    <div class="price">₹45</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>YouTube Premium</h3>
+    <div class="price">₹50</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Zee5</h3>
+    <div class="price">₹75</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>SonyLIV</h3>
+    <div class="price">₹65</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Adobe Creative Cloud</h3>
+    <div class="price">₹3,699</div>
+    <div class="duration">per year</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Spotify</h3>
+    <div class="price">₹35</div>
+    <div class="duration">for 2 months</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Netflix</h3>
+    <div class="price">₹159</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Canva Pro (3 months)</h3>
+    <div class="price">₹75</div>
+    <div class="duration">for 3 months</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Canva Pro (1 year)</h3>
+    <div class="price">₹299</div>
+    <div class="duration">per year</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>ChatGPT Plus</h3>
+    <div class="price">₹99</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Apple Music</h3>
+    <div class="price">₹50</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Prime Video (6 months)</h3>
+    <div class="price">₹150</div>
+    <div class="duration">for 6 months</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Crunchyroll (monthly)</h3>
+    <div class="price">₹50</div>
+    <div class="duration">per month</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Crunchyroll (yearly)</h3>
+    <div class="price">₹999</div>
+    <div class="duration">per year</div>
+  </div>
+
+  <div class="plan-card">
+    <h3>Prime + Spotify Bundle</h3>
+    <div class="price">₹60</div>
+    <div class="duration">per month</div>
+  </div>
+
+</div>
+
+  </div></body>
+      </html>
