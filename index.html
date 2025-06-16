@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trust Tune - Premium Plans</title>
   <style>
-    /* CSS Variables from User's Teal & Gray Palette */
+    /* Palette from user's image: Teal & Gray */
     :root {
       --color-primary: #00B2CC;  /* Bright Teal */
       --color-secondary: #7EC8CB; /* Soft Aqua */
@@ -12,246 +12,122 @@
       --color-bg: #E3F2F9;        /* Pale Cyan Background */
       --color-text: #0A1F2E;      /* Deep Navy Text */
       --color-card-bg: #FFFFFF;   /* White Card Background */
-    }/* Reset & Base */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
-}
-a { text-decoration: none; color: inherit; }
+      --ribbon-bg: #FF6F61;       /* Coral for promo ribbon */
+      --ribbon-text: #FFFFFF;     /* White text on ribbon */
+      --discount-bg: #0055A5;     /* Navy blue for discount badge */
+      --discount-text: #FFFFFF;
+      --support-bg: #25D366;      /* WhatsApp green */
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding-bottom: 60px; /* room for bottom nav */
+    }
+    a { text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }/* Hero */
+.hero { text-align: center; margin: 40px 0; }
+.hero h1 { font-size: 3rem; color: var(--color-primary); }
+.hero p { font-size: 1.2rem; color: var(--color-secondary); margin-top: 10px; }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
-}
+/* Features */
+.features { display: flex; justify-content: center; gap: 30px; margin: 30px 0; flex-wrap: wrap; }
+.features li { list-style: none; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  margin: 40px 0;
-}
-.hero h1 {
-  font-size: 3rem;
-  color: var(--color-primary);
-}
-.hero p {
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  margin-top: 10px;
-}
+/* Grid */
+.plans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+.plan-card { position: relative; background: var(--color-card-bg); border-radius: 10px; border: 2px solid var(--color-secondary); padding: 20px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+.plan-card:hover { transform: translateY(-5px); box-shadow: 0 6px 18px rgba(45,106,106,0.3); }
 
-/* Features List */
-.features {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-.features li {
-  list-style: none;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-text);
-}
+/* Promotional Ribbon */
+.ribbon { position: absolute; top: 0; right: 0; background: var(--ribbon-bg); color: var(--ribbon-text); padding: 4px 12px; font-size: 0.75rem; font-weight: bold; transform: translate(25%, -25%) rotate(45deg); transform-origin: top right; }
+/* Discount Badge */
+.discount-badge { position: absolute; top: 10px; left: 10px; background: var(--discount-bg); color: var(--discount-text); padding: 4px 6px; font-size: 0.75rem; border-radius: 4px; }
+/* Overlay Icons */
+.plan-card .overlay { position: absolute; top: 10px; right: 10px; display: flex; gap: 8px; }
+.plan-card button { background: none; border: none; cursor: pointer; }
+.plan-card .overlay img { width: 20px; height: 20px; }
 
-/* Plans Grid */
-.plans-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.plan-card {
-  background: var(--color-card-bg);
-  border-radius: 10px;
-  border: 2px solid var(--color-secondary);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.plan-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(45,106,106,0.3);
-}
-
-.plan-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-  color: var(--color-accent);
-}
-.plan-card .price {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin: 10px 0;
-  color: var(--color-primary);
-}
-.plan-card .duration {
-  font-size: 0.95rem;
-  color: var(--color-text);
-  margin-bottom: 16px;
-}
+.plan-card h3 { margin: 20px 0 10px; font-size: 1.3rem; color: var(--color-accent); }
+.plan-card .price { font-size: 1.8rem; font-weight: bold; margin: 10px 0; color: var(--color-primary); }
+.plan-card .duration { font-size: 0.95rem; color: var(--color-text); margin-bottom: 16px; }
 
 /* Buy Button */
-.buy-button {
-  display: inline-block;
-  background: var(--color-primary);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-.buy-button:hover {
-  background: var(--color-accent);
-}
+.buy-button { display: inline-block; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.buy-button:hover { background: var(--color-accent); }
 
-/* WhatsApp Footer */
-.whatsapp-footer {
-  text-align: center;
-  margin: 40px 0 20px;
-}
-.whatsapp-footer a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-accent);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.whatsapp-icon {
-  width: 24px;
-  height: 24px;
-}
+/* Floating Support Bubble */
+.support-float { position: fixed; bottom: 80px; left: 20px; background: var(--support-bg); color: #fff; border-radius: 30px; padding: 10px 16px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); animation: pulse 2s infinite; z-index: 1000; }
+.support-float img { width: 24px; height: 24px; }
+@keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.1);} }
+
+/* Bottom Navigation */
+.bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; box-shadow: 0 -1px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-around; padding: 8px 0; z-index: 999; }
+.bottom-nav a { flex: 1; text-align: center; color: var(--color-text); font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; }
+.bottom-nav a img { width: 24px; height: 24px; margin-bottom: 4px; }
 
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Hero / Introduction -->
     <section class="hero">
       <h1>Welcome to Trust Tune</h1>
       <p>Your trusted partner for premium OTT subscriptions</p>
-    </section><!-- Key Features -->
-<ul class="features">
-  <li>🔒 Secure UPI Payments</li>
-  <li>⚡ Instant Activation</li>
-  <li>💬 24/7 WhatsApp Support</li>
-</ul>
-
-<!-- Plans -->
-<div class="plans-grid">
-  <div class="plan-card">
-    <h3>JioHotstar</h3>
-    <div class="price">₹75</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=75" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Amazon Prime Video</h3>
-    <div class="price">₹45</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=45" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>YouTube Premium</h3>
-    <div class="price">₹50</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=50" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Zee5</h3>
-    <div class="price">₹75</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=75" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>SonyLIV</h3>
-    <div class="price">₹65</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=65" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Adobe Creative Cloud</h3>
-    <div class="price">₹3,699</div>
-    <div class="duration">per year</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=3699" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Spotify</h3>
-    <div class="price">₹35</div>
-    <div class="duration">for 2 months</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=35" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Netflix</h3>
-    <div class="price">₹159</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=159" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Canva Pro (3m)</h3>
-    <div class="price">₹75</div>
-    <div class="duration">for 3 months</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=75" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Canva Pro (1y)</h3>
-    <div class="price">₹299</div>
-    <div class="duration">per year</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=299" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>ChatGPT Plus</h3>
-    <div class="price">₹99</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=99" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Apple Music</h3>
-    <div class="price">₹50</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=50" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Prime Video (6m)</h3>
-    <div class="price">₹150</div>
-    <div class="duration">for 6 months</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=150" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Crunchyroll (m)</h3>
-    <div class="price">₹50</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=50" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Crunchyroll (y)</h3>
-    <div class="price">₹999</div>
-    <div class="duration">per year</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=999" target="_blank">Buy Now</a>
-  </div>
-  <div class="plan-card">
-    <h3>Prime + Spotify Bundle</h3>
-    <div class="price">₹60</div>
-    <div class="duration">per month</div>
-    <a class="buy-button" href="upi://pay?pa=YOUR_UPI_ID&pn=TrustTune&am=60" target="_blank">Buy Now</a>
-  </div>
-</div>
-
-<!-- WhatsApp Footer -->
-<div class="whatsapp-footer">
-  <a href="https://wa.me/919844976945" target="_blank">
-    <img class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    Message us on WhatsApp
-  </a>
-</div>
-
-  </div>
+    </section>
+    <ul class="features">
+      <li>🔒 Secure UPI Payments</li>
+      <li>⚡ Instant Activation</li>
+      <li>💬 24/7 WhatsApp Support</li>
+    </ul>
+    <div class="plans-grid">
+      <!-- JioHotstar -->
+      <div class="plan-card">
+        <div class="discount-badge">-10%</div>
+        <div class="overlay">
+          <button aria-label="Add to wishlist"><img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Wishlist"/></button>
+          <button aria-label="Add to cart"><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart.png" alt="Cart"/></button>
+        </div>
+        <h3>JioHotstar</h3>
+        <div class="price">₹75</div>
+        <div class="duration">per month</div>
+        <a class="buy-button" href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=75" target="_blank">Buy Now</a>
+      </div>
+      <!-- Amazon Prime -->
+      <div class="plan-card">
+        <div class="discount-badge">-15%</div>
+        <div class="overlay">
+          <button aria-label="Add to wishlist"><img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Wishlist"/></button>
+          <button aria-label="Add to cart"><img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart.png" alt="Cart"/></button>
+        </div>
+        <h3>Amazon Prime Video</h3>
+        <div class="price">₹45</div>
+        <div class="duration">per month</div>
+        <a class="buy-button" href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=45" target="_blank">Buy Now</a>
+      </div>
+      <!-- More plan-cards as needed... -->
+    </div>
+  </div>  <!-- Floating Support -->  <a class="support-float" href="https://wa.me/919844976945" target="_blank" aria-label="Chat via WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <span>Get Support</span>
+  </a>  <!-- Bottom Nav -->  <nav class="bottom-nav">
+    <a href="#">
+      <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Shop" />
+      <span>Shop</span>
+    </a>
+    <a href="#">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/like--v1.png" alt="Wishlist" />
+      <span>Wishlist</span>
+    </a>
+    <a href="#">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/shopping-cart.png" alt="Cart" />
+      <span>Cart</span>
+    </a>
+    <a href="#">
+      <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" alt="Account" />
+      <span>My Account</span>
+    </a>
+  </nav>
 </body>
-      </html>
+</html>
