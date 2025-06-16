@@ -1,161 +1,157 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrustTune OTT Plans</title>
+  <title>TrustTune Plans</title>
   <style>
-    * { box-sizing: border-box; }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #1b0033, #0a001f);
+      font-family: Arial, sans-serif;
+      background: #121212;
       color: #fff;
+      padding: 20px;
     }
-    header {
-      background-color: #1a001f;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+    .plan {
+      border: 1px solid #333;
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px 0;
     }
-    header a {
-      position: absolute;
-      left: 1rem;
-      color: #aaa;
-      font-size: 0.9rem;
-      text-decoration: underline;
+    .plan h3 {
+      margin: 0;
+      color: #e50914;
     }
-    h1 { margin: 0; font-size: 2rem; }
-    .cart {
+    .plan p {
+      font-size: 14px;
+      color: #ccc;
+    }
+    button {
+      background: #e50914;
+      border: none;
+      padding: 8px 16px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #cart {
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #2e0055;
-      padding: 10px 16px;
+      background: #333;
       border-radius: 12px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 1000;
+      padding: 15px;
+      display: none;
     }
-    .filters {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    .filters button {
-      margin: 0.4rem;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #8000ff;
-      color: #fff;
-      cursor: pointer;
-    }
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-    .card {
-      background-color: #250035;
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      position: relative;
-      transition: transform 0.2s ease;
-    }
-    .card:hover { transform: translateY(-5px); }
-    .tag {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #ff0077;
-      color: white;
-      padding: 0.3rem 0.6rem;
-      font-size: 0.8rem;
-      border-radius: 5px;
-    }
-    .card h2 { margin-top: 0; font-size: 1.5rem; color: #f4c2ff; }
-    .card p { font-size: 1rem; margin-bottom: 1rem; }
-    .card button {
-      background-color: #ff00cc;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    .qr {
-      text-align: center;
-      margin: 2rem;
-    }
-    .qr img {
-      width: 200px;
-      border: 4px solid #fff;
-      border-radius: 12px;
-    }
-    .features {
-      background-color: #14001a;
-      padding: 2rem;
-    }
-    .features h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1rem; }
-    .features ul { list-style: none; padding: 0; text-align: center; }
-    .features li { margin: 0.5rem 0; font-size: 1.1rem; }
-    .whatsapp {
+    #whatsapp {
       position: fixed;
-      right: 15px;
       bottom: 15px;
-      background-color: #25D366;
+      right: 15px;
+      background: #25D366;
       color: white;
-      padding: 14px;
       border-radius: 50%;
-      font-size: 1.6rem;
-      text-decoration: none;
-      z-index: 1000;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .admin-link {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="admin.html">Admin? Login here</a>
-    <h1>TrustTune OTT & Services</h1>
-  </header>  <div class="cart">🛒 Cart</div>  <div class="filters">
-    <button>Monthly</button>
-    <button>Yearly</button>
-    <button>Combo Plans</button>
-    <button>Under ₹100</button>
-  </div>  <section class="plans">
-    <div class="card"><div class="tag">🔥 Best Seller</div><h2>Netflix – ₹159/m</h2><p>2 screens – shared plan – Full HD.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><div class="tag">💎 Premium</div><h2>Adobe – ₹3699/y</h2><p>All apps – shared to your mail.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>ChatGPT – ₹99/m</h2><p>Shared account – GPT-4 Pro.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Prime Video – ₹150/6m</h2><p>2 device shared – Full HD access.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Prime Video – ₹49/m</h2><p>Monthly plan – shared device.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Apple Music – ₹40/m</h2><p>Individual access to premium music.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Canva Pro – ₹95/3m</h2><p>Shared to your mail – 3 month pack.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Canva Pro – ₹299/y</h2><p>1-year mail access.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>YouTube Premium – ₹45/m</h2><p>Shared account – ad-free experience.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>Jio+Hotstar – ₹79/m</h2><p>Mobile Hotstar linked to Jio plan.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>ZEE5 – ₹75/m</h2><p>Shared access.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><h2>SonyLiv – ₹55/m</h2><p>Shared login.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><div class="tag">🔥 Combo</div><h2>YouTube + Prime – ₹45/m</h2><p>Both services shared to mail/device.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-    <div class="card"><div class="tag">🔥 Combo</div><h2>Jio+ZEE5+SonyLiv – ₹99/m</h2><p>Full combo – linked to your number.</p><button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button></div>
-  </section>  <div class="qr">
-    <h3>Scan to Pay</h3>
-    <img src="qr.jpg" alt="QR Code to Pay">
-    <p>UPI ID: <strong>9108176778@fam</strong></p>
-  </div>  <section class="features">
-    <h3>Why TrustTune?</h3>
-    <ul>
-      <li>✅ Affordable & verified OTT plans</li>
-      <li>✅ Instant delivery on WhatsApp or Email</li>
-      <li>✅ Combo packs for more savings</li>
-      <li>✅ Trusted by 1000+ happy customers</li>
-    </ul>
-  </section><a class="whatsapp" href="https://wa.me/919844976945">💬</a>
+
+  <h1>🔥 TrustTune OTT & Software Plans</h1>
+
+  <div class="plan">
+    <h3>Netflix – ₹159/m</h3>
+    <p>Shared plan with 2 screen support.</p>
+    <button onclick="addToCart('Netflix – ₹159/m')">Add to Cart</button>
+  </div>
+
+  <div class="plan">
+    <h3>Adobe Creative – ₹3699/year</h3>
+    <p>Full access to Adobe apps on your mail.</p>
+    <button onclick="addToCart('Adobe – ₹3699/y')">Add to Cart</button>
+  </div>
+
+  <div class="plan">
+    <h3>ChatGPT – ₹99/m</h3>
+    <p>Access to ChatGPT Pro shared login.</p>
+    <button onclick="addToCart('ChatGPT – ₹99/m')">Add to Cart</button>
+  </div>
+
+  <div class="plan">
+    <h3>Prime Video – ₹150 for 6 months</h3>
+    <p>2 device support, separate profiles.</p>
+    <button onclick="addToCart('Prime Video – ₹150/6m')">Add to Cart</button>
+  </div>
+
+  <div class="plan">
+    <h3>YouTube Premium + Prime – ₹45/m</h3>
+    <p>Shared access on your email.</p>
+    <button onclick="addToCart('YouTube + Prime – ₹45/m')">Add to Cart</button>
+  </div>
+
+  <div class="plan">
+    <h3>Combo: Jio + Zee5 + SonyLiv – ₹99/m</h3>
+    <p>All 3 on your number (5 devices supported).</p>
+    <button onclick="addToCart('Combo Jio/ZEE5/Sony – ₹99/m')">Add to Cart</button>
+  </div>
+
+  <div id="cart">
+    <h3>🛒 Cart (<span id="cartCount">0</span>)</h3>
+    <ul id="cartList"></ul>
+    <button onclick="checkout()">Pay Now</button>
+  </div>
+
+  <div id="whatsapp" onclick="window.location.href='https://wa.me/919844976945'">💬</div>
+  <div class="admin-link"><a href="admin.html" style="color:#888;">Admin? Login here</a></div>
+
+  <script>
+    const cart = [];
+    const prices = {
+      "Netflix – ₹159/m": 159,
+      "Adobe – ₹3699/y": 3699,
+      "ChatGPT – ₹99/m": 99,
+      "Prime Video – ₹150/6m": 150,
+      "YouTube + Prime – ₹45/m": 45,
+      "Combo Jio/ZEE5/Sony – ₹99/m": 99
+    };
+
+    function addToCart(item) {
+      cart.push(item);
+      document.getElementById("cartCount").innerText = cart.length;
+      updateCartList();
+      document.getElementById("cart").style.display = "block";
+    }
+
+    function updateCartList() {
+      const list = document.getElementById("cartList");
+      list.innerHTML = "";
+      cart.forEach(i => {
+        const li = document.createElement("li");
+        li.innerText = i;
+        list.appendChild(li);
+      });
+    }
+
+    function checkout() {
+      let total = 0;
+      cart.forEach(item => {
+        total += prices[item] || 0;
+      });
+      const upiUrl = `upi://pay?pa=9108176778@fam&am=${total}&cu=INR`;
+      window.location.href = upiUrl;
+    }
+  </script>
 
 </body>
 </html>
