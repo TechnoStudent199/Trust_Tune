@@ -3,96 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TrustTune - Premium OTT Plans</title>
+  <title>TrustTune Plans</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0d0d22;
-      color: #fff;
+      background: #0d0d22;
+      color: white;
     }
 
     header {
-      background-color: #1f1f3d;
-      padding: 20px;
+      background: #1e1e2e;
+      padding: 1rem;
       text-align: center;
     }
 
-    header h1 {
+    h1 {
       color: #a259ff;
-      font-size: 2rem;
+      margin: 0;
     }
 
     .plans {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      padding: 30px;
-    }
-
-    .plan-card {
-      background: #1f1f3d;
-      border-radius: 12px;
       padding: 20px;
+    }
+
+    .plan {
+      background: #1a1a33;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(162, 89, 255, 0.3);
       text-align: center;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     }
 
-    .plan-card h2 {
-      color: #ffd700;
-      font-size: 1.3rem;
+    .plan h2 {
+      color: #ffcd57;
     }
 
-    .plan-card p {
+    .price {
+      font-size: 24px;
       margin: 10px 0;
+      color: #a259ff;
     }
 
-    .plan-card a {
-      background-color: #a259ff;
+    .buy-btn {
+      background: #a259ff;
       color: white;
-      padding: 10px 18px;
+      padding: 10px 20px;
       text-decoration: none;
       border-radius: 8px;
       display: inline-block;
       margin-top: 10px;
     }
 
-    .features {
-      padding: 30px;
-      background-color: #14142b;
-    }
-
-    .features h2 {
-      color: #a259ff;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .features ul {
-      list-style: none;
-      padding-left: 0;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .features ul li {
-      margin: 10px 0;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .features ul li::before {
-      content: '✓';
-      color: #00ff9d;
-      position: absolute;
-      left: 0;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
-      opacity: 0.6;
+      font-size: 14px;
+      color: #aaa;
     }
 
     .whatsapp {
@@ -108,58 +78,107 @@
 
     .admin-link {
       position: fixed;
-      bottom: 10px;
-      right: 90px;
-      color: #a259ff;
+      top: 15px;
+      left: 15px;
+      font-size: 14px;
+    }
+
+    .admin-link a {
+      color: #aaa;
       text-decoration: none;
-      font-size: 0.9rem;
-      opacity: 0.7;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>TrustTune Premium OTT Plans</h1>
+    <h1>TrustTune OTT Plans</h1>
   </header>
 
+  <div class="admin-link">
+    <a href="admin.html">Admin? Login here</a>
+  </div>
+
   <section class="plans">
-    <div class="plan-card"><h2>Netflix</h2><p>₹159/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=159&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Adobe Creative</h2><p>₹3699/year</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=3699&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>ChatGPT</h2><p>₹99/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=99&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Apple Music</h2><p>₹40</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=40&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Prime Video</h2><p>₹150 / 6 Months</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=150&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Prime Video</h2><p>₹49/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=49&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Canva Pro</h2><p>₹95 / 3 Months</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=95&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Canva Pro</h2><p>₹299/year</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=299&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>YouTube Premium</h2><p>₹45/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=45&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>Jio + Hotstar</h2><p>₹79/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=79&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>ZEE5 + SonyLiv + Jio</h2><p>₹99/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=99&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>ZEE5</h2><p>₹75/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=75&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>SonyLiv</h2><p>₹55/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=55&cu=INR">Buy Now</a></div>
-    <div class="plan-card"><h2>YouTube + Prime</h2><p>₹45/month</p><a href="upi://pay?pa=9108176778@fam&pn=TrustTune&am=45&cu=INR">Buy Now</a></div>
+    <div class="plan">
+      <h2>Netflix</h2>
+      <p class="price">₹159/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Adobe Creative</h2>
+      <p class="price">₹3699/year</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>ChatGPT</h2>
+      <p class="price">₹99/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Apple Music</h2>
+      <p class="price">₹40/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Prime Video</h2>
+      <p class="price">₹150 for 6 months</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Prime Video</h2>
+      <p class="price">₹49/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Canva Pro</h2>
+      <p class="price">₹95 for 3 months</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Canva Pro</h2>
+      <p class="price">₹299/year</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>YouTube Premium</h2>
+      <p class="price">₹45/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>JioHotstar</h2>
+      <p class="price">₹79/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>ZEE5</h2>
+      <p class="price">₹75/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>SonyLiv</h2>
+      <p class="price">₹55/month</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>Jio + ZEE5 + SonyLiv</h2>
+      <p class="price">₹99/month (Combo)</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
+    <div class="plan">
+      <h2>YouTube + Prime Video</h2>
+      <p class="price">₹45/month (Combo)</p>
+      <a class="buy-btn" href="upi://pay?pa=9108176778@fam">Buy</a>
+    </div>
   </section>
 
-  <section class="features">
-    <h2>Why Choose TrustTune?</h2>
-    <ul>
-      <li>Lowest price in India 🇮🇳</li>
-      <li>Fast Activation ⏱️</li>
-      <li>Trusted Reseller (with QR)</li>
-      <li>Instant UPI Payment</li>
-      <li>5 Device Support on most plans</li>
-    </ul>
-  </section>
+  <footer>
+    &copy; 2025 TrustTune | All Rights Reserved
+  </footer>
 
   <div class="whatsapp">
     <a href="https://wa.me/919844976945" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
     </a>
   </div>
-
-  <a href="admin.html" class="admin-link">🔐 Admin? Login here</a>
-
-  <footer>
-    &copy; 2025 TrustTune. All rights reserved.
-  </footer>
 </body>
-  </html>
+        </html>
