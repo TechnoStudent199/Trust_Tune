@@ -1,13 +1,16 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrustTune Plans</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustTune OTT Plans</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #0f0f0f;
+      background: linear-gradient(to right, #1b0033, #0a001f);
       color: #fff;
     }
     header {
@@ -15,48 +18,99 @@
       padding: 1rem;
       display: flex;
       justify-content: center;
+      align-items: center;
       position: relative;
     }
     header a {
       position: absolute;
       left: 1rem;
-      top: 1rem;
       color: #aaa;
       font-size: 0.9rem;
       text-decoration: underline;
     }
     h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #2e0055;
+      padding: 10px 16px;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .filters {
       text-align: center;
-      margin-bottom: 0.5rem;
+      margin: 1rem 0;
+    }
+    .filters button {
+      margin: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #8000ff;
+      color: #fff;
+      cursor: pointer;
     }
     .plans {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
       padding: 2rem;
     }
     .card {
-      background-color: #1e1e2f;
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      background-color: #250035;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff0077;
+      color: white;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 5px;
     }
     .card h2 {
-      margin: 0.5rem 0;
-      font-size: 1.3rem;
+      margin-top: 0;
+      font-size: 1.5rem;
       color: #f4c2ff;
     }
     .card p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       margin-bottom: 1rem;
     }
     .card button {
-      background-color: #8000ff;
+      background-color: #ff00cc;
       color: white;
       border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
       cursor: pointer;
+    }
+    .qr {
+      text-align: center;
+      margin: 2rem;
+    }
+    .qr img {
+      width: 200px;
+      border: 4px solid #fff;
+      border-radius: 12px;
     }
     .features {
       background-color: #14001a;
@@ -64,6 +118,7 @@
     }
     .features h3 {
       text-align: center;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
     .features ul {
@@ -73,6 +128,7 @@
     }
     .features li {
       margin: 0.5rem 0;
+      font-size: 1.1rem;
     }
     .whatsapp {
       position: fixed;
@@ -80,19 +136,11 @@
       bottom: 15px;
       background-color: #25D366;
       color: white;
-      padding: 12px;
+      padding: 14px;
       border-radius: 50%;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       text-decoration: none;
-    }
-    .qr {
-      text-align: center;
-      margin: 2rem;
-    }
-    .qr img {
-      width: 160px;
-      border: 4px solid #fff;
-      border-radius: 12px;
+      z-index: 1000;
     }
   </style>
 </head>
@@ -100,13 +148,20 @@
   <header>
     <a href="admin.html">Admin? Login here</a>
     <h1>TrustTune OTT & Services</h1>
-  </header>  <section class="plans">
+  </header>  <div class="cart">🛒 Cart</div>  <div class="filters">
+    <button>Monthly</button>
+    <button>Yearly</button>
+    <button>Combo Plans</button>
+    <button>Under ₹100</button>
+  </div>  <section class="plans">
     <div class="card">
+      <div class="tag">🔥 Best Seller</div>
       <h2>Netflix – ₹159/month</h2>
       <p>Shared plan with 2 screens – Full HD streaming available.</p>
       <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
     </div>
     <div class="card">
+      <div class="tag">💎 Premium</div>
       <h2>Adobe – ₹3699/year</h2>
       <p>Delivered to your email – Includes Photoshop, Premiere Pro, Illustrator & more.</p>
       <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
@@ -116,59 +171,10 @@
       <p>Pro version, shared access – Fast response GPT-4.</p>
       <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
     </div>
-    <div class="card">
-      <h2>Prime Video – ₹150/6m</h2>
-      <p>Works on 2 devices simultaneously – Full access.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>Prime Video – ₹49/month</h2>
-      <p>Shared access on 2 devices – Regular plan.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>Canva Pro – ₹95/3m</h2>
-      <p>Delivered on email – Unlimited designs, premium features.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>Canva Pro – ₹299/year</h2>
-      <p>One-year access – For designers and businesses.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>YouTube Premium – ₹45/month</h2>
-      <p>Delivered to your mail – Ad-free YouTube & background play.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>Jio + Hotstar – ₹79/month</h2>
-      <p>Combo – Linked to your number for smooth access.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>ZEE5 – ₹75/month</h2>
-      <p>Movies, TV Shows & Originals.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>SonyLiv – ₹55/month</h2>
-      <p>All shows & live sports included – Shared plan.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>Jio + ZEE5 + SonyLiv – ₹99/month</h2>
-      <p>Triple combo delivered via your mobile number.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
-    <div class="card">
-      <h2>YouTube + Prime Video – ₹45/month</h2>
-      <p>Shared combo plan with full access to both platforms.</p>
-      <button onclick="location.href='upi://pay?pa=9108176778@fam'">Buy</button>
-    </div>
+    <!-- Additional plans can be inserted here -->
   </section>  <div class="qr">
     <h3>Scan to Pay</h3>
-    <img src="qr.jpg" alt="QR Code to Pay" />
+    <img src="qr.jpg" alt="QR Code to Pay">
     <p>UPI ID: <strong>9108176778@fam</strong></p>
   </div>  <section class="features">
     <h3>Why TrustTune?</h3>
@@ -181,4 +187,4 @@
   </section><a class="whatsapp" href="https://wa.me/919844976945">💬</a>
 
 </body>
-</html>
+        </html>
