@@ -1,134 +1,165 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TrustTune Plans</title>
+  <title>TrustTune Premium Plans</title>
   <style>
     body {
       margin: 0;
       padding: 20px;
-      background-color: #0e0e0e;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
       color: #f1f1f1;
       font-family: 'Segoe UI', sans-serif;
     }
-699/year</h3>
-      <p>Full access to Adobe suite on your mail. Great for creators!</p>
-      <button onclick="addToCart('Adobe – ₹3699/year')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>ChatGPT Pro – ₹99/month</h3>
-      <p>Premium AI access via shared login. Instant replies, pro mode.</p>
-      <button onclick="addToCart('ChatGPT Pro – ₹99/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Prime Video – ₹150/6 months</h3>
-      <p>2 device access. Shared securely with separate profiles.</p>
-      <button onclick="addToCart('Prime – ₹150/6m')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Prime Video – ₹49/month</h3>
-      <p>Affordable streaming for solo users. Good quality access.</p>
-      <button onclick="addToCart('Prime – ₹49/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Canva Pro – ₹95/3 months</h3>
-      <p>Design like a pro on your email ID.</p>
-      <button onclick="addToCart('Canva – ₹95/3m')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Canva Pro – ₹299/year</h3>
-      <p>Ultimate yearly plan for creators and students.</p>
-      <button onclick="addToCart('Canva – ₹299/year')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>YouTube Premium – ₹45/month</h3>
-      <p>Ad-free YouTube & music. Shared on your mail.</p>
-      <button onclick="addToCart('YouTube – ₹45/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Jio + Zee5 + SonyLiv – ₹99/month</h3>
-      <p>Combo on your number. 5 device support.</p>
-      <button onclick="addToCart('Combo – ₹99/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>Zee5 – ₹75/month</h3>
-      <p>Regional content and movies. Shared login.</p>
-      <button onclick="addToCart('Zee5 – ₹75/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>SonyLiv – ₹55/month</h3>
-      <p>Sports, serials and originals. Single user access.</p>
-      <button onclick="addToCart('SonyLiv – ₹55/month')">Add to Cart</button>
-    </div>
-
-    <div class="plan">
-      <h3>YouTube + Prime Combo – ₹45/month</h3>
-      <p>Both services bundled for the price of one. Shared login.</p>
-      <button onclick="addToCart('YT+Prime – ₹45/month')">Add to Cart</button>
-    </div>
-
-  </div>
-
-  <div id="cart">
+    h1 {
+      color: #e94560;
+      text-align: center;
+    }
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .plan {
+      background-color: #0f3460;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+    .plan:hover {
+      transform: translateY(-4px);
+    }
+    .plan h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #ffffff;
+    }
+    .plan p {
+      font-size: 15px;
+      color: #ddd;
+      margin: 12px 0 18px;
+    }
+    .plan button {
+      background-color: #e94560;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #cart {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #1a1a2e;
+      border-radius: 16px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 0 12px #000;
+    }
+    #cart h3 {
+      margin-top: 0;
+      font-size: 17px;
+      color: #fff;
+    }
+    #cart ul {
+      padding-left: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+    #cart button {
+      margin-top: 10px;
+      width: 100%;
+      background-color: #03dac6;
+      color: #000;
+      font-weight: bold;
+    }
+    #whatsapp {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .admin-link {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .admin-link a {
+      color: #aaa;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>  <h1>🔥 TrustTune Premium Plans</h1>  <div class="plan-grid" id="planGrid"></div>  <div id="cart">
     <h3>🛒 Cart (<span id="cartCount">0</span>)</h3>
     <ul id="cartList"></ul>
     <button onclick="checkout()">Pay Now</button>
-  </div>
+  </div>  <div id="whatsapp" onclick="window.location.href='https://wa.me/919844976945'">💬</div>
+  <div class="admin-link"><a href="admin.html">Admin? Login here</a></div>  <script>
+    const plans = [
+      { name: 'Netflix – ₹159/month', price: 159, desc: 'Shared 2-screen Netflix plan for personal streaming.' },
+      { name: 'Adobe Creative – ₹3699/year', price: 3699, desc: 'Full Adobe suite on your email. Ideal for professionals.' },
+      { name: 'ChatGPT Pro – ₹99/month', price: 99, desc: 'Access advanced AI features with shared login.' },
+      { name: 'Apple Music – ₹40/month', price: 40, desc: 'Enjoy premium music experience on iOS & Android.' },
+      { name: 'Prime Video – ₹150/6 months', price: 150, desc: 'Access for 2 devices. HD quality streaming.' },
+      { name: 'Prime Video – ₹49/month', price: 49, desc: 'Budget monthly plan. Full access.' },
+      { name: 'Canva Pro – ₹95/3 months', price: 95, desc: 'Design tools with full features, via your email.' },
+      { name: 'Canva Pro – ₹299/year', price: 299, desc: 'Annual plan, excellent for students and creators.' },
+      { name: 'YouTube Premium – ₹45/month', price: 45, desc: 'Ad-free YouTube and Music, shared on email.' },
+      { name: 'Jio + Zee5 + SonyLiv – ₹99/month', price: 99, desc: 'Combo access on your number. 5 device support.' },
+      { name: 'Zee5 – ₹75/month', price: 75, desc: 'Indian content, live TV and more.' },
+      { name: 'SonyLiv – ₹55/month', price: 55, desc: 'Watch sports, originals and premium shows.' },
+      { name: 'YouTube + Prime – ₹45/month', price: 45, desc: 'Combo pack with premium access to both.' }
+    ];
 
-  <div id="whatsapp" onclick="window.location.href='https://wa.me/919844976945'">💬</div>
-  <div class="admin-link"><a href="admin.html">Admin? Login here</a></div>
-
-  <script>
     const cart = [];
-    const prices = {
-      "Netflix – ₹159/month": 159,
-      "Adobe – ₹3699/year": 3699,
-      "ChatGPT Pro – ₹99/month": 99,
-      "Prime – ₹150/6m": 150,
-      "Prime – ₹49/month": 49,
-      "Canva – ₹95/3m": 95,
-      "Canva – ₹299/year": 299,
-      "YouTube – ₹45/month": 45,
-      "Combo – ₹99/month": 99,
-      "Zee5 – ₹75/month": 75,
-      "SonyLiv – ₹55/month": 55,
-      "YT+Prime – ₹45/month": 45
-    };
 
-    function addToCart(item) {
-      cart.push(item);
-      document.getElementById("cartCount").innerText = cart.length;
-      updateCartList();
+    function addToCart(plan) {
+      cart.push(plan);
+      document.getElementById('cartCount').innerText = cart.length;
+      renderCart();
     }
 
-    function updateCartList() {
-      const list = document.getElementById("cartList");
-      list.innerHTML = "";
-      cart.forEach(i => {
-        const li = document.createElement("li");
-        li.innerText = i;
-        list.appendChild(li);
+    function renderCart() {
+      const cartList = document.getElementById('cartList');
+      cartList.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name}`;
+        cartList.appendChild(li);
       });
     }
 
     function checkout() {
-      let total = 0;
-      cart.forEach(item => {
-        total += prices[item] || 0;
-      });
-      const upiUrl = `upi://pay?pa=9108176778@fam&am=${total}&cu=INR`;
+      const total = cart.reduce((sum, p) => sum + p.price, 0);
+      const upiUrl = `upi://pay?pa=9108176778@fam&pn=TrustTune&am=${total}&cu=INR`;
       window.location.href = upiUrl;
     }
-  </script>
 
-</body>
-  </html>
+    function renderPlans() {
+      const grid = document.getElementById('planGrid');
+      plans.forEach(plan => {
+        const div = document.createElement('div');
+        div.className = 'plan';
+        div.innerHTML = `<h3>${plan.name}</h3><p>${plan.desc}</p><button onclick='addToCart(${JSON.stringify(plan)})'>Add to Cart</button>`;
+        grid.appendChild(div);
+      });
+    }
+
+    renderPlans();
+  </script></body>
+</html>
