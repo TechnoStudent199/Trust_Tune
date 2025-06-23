@@ -1,18 +1,37 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Payment - TrustTune</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - Trust Tune</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #0d1117; color: #fff; text-align: center; padding: 40px; }
+    .btn { display: inline-block; background: #58a6ff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 20px; }
+    .info-box { background: #161b22; padding: 20px; border-radius: 8px; display: inline-block; margin-top: 20px; }
+  </style>
 </head>
 <body>
-<header>Make Payment</header>
-<section>
-    <p>Pay via UPI: <strong>9108176778@fam</strong></p>
-    <img src="images/qr-code.png" alt="QR Code" width="250" style="border-radius:10px;">
-    <br><br>
-    <a href="images/qr-code.png" class="button" download>Download QR Code</a>
-</section>
-<footer>After payment, WhatsApp us at 9844976945</footer>
+  <h2>Complete Your Payment</h2>
+  <div class="info-box">
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Plan:</strong> <span id="plan"></span></p>
+    <p><strong>Price:</strong> ₹<span id="price"></span></p>
+    <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+    <p><strong>UPI ID:</strong> <span id="upi">9108176778@fam</span> <button onclick="copyUPI()">Copy</button></p>
+    <a id="whatsappBtn" class="btn" target="_blank">Send Payment Screenshot</a>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('name').innerText = params.get('name');
+    document.getElementById('plan').innerText = params.get('plan');
+    document.getElementById('price').innerText = params.get('price');
+    document.getElementById('orderId').innerText = params.get('orderId');
+    const message = `Hi, I have paid for ${params.get('plan')} (₹${params.get('price')}). My name is ${params.get('name')} and my order ID is ${params.get('orderId')}.`;
+    document.getElementById('whatsappBtn').href = `https://wa.me/9108176778?text=${encodeURIComponent(message)}`;
+    function copyUPI() {
+      navigator.clipboard.writeText("9108176778@fam");
+      alert("UPI ID copied!");
+    }
+  </script>
 </body>
 </html>
