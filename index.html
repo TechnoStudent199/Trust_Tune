@@ -3,87 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trust Tune - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Pricing - Trust Tune</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0d1117;
-      color: #ffffff;
-    }
-    header {
-      background-color: #161b22;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      color: #58a6ff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-    }
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: #0d1117;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      color: #58a6ff;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #c9d1d9;
-      margin-top: 10px;
-    }
-    .cta-buttons {
-      margin-top: 30px;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: #238636;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0b0b0e;
       color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
+      margin: 0;
+      padding: 0;
     }
-    .cta-buttons a:hover {
-      background: #2ea043;
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
     }
-    footer {
-      background-color: #161b22;
+    h1 {
       text-align: center;
+      color: #00B2CC;
+      margin-bottom: 30px;
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .plan-card {
+      background: #16181d;
+      border-radius: 12px;
       padding: 20px;
-      margin-top: 60px;
+      border: 1px solid #2d2f36;
+      transition: transform 0.2s;
+    }
+    .plan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+    .plan-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #7EC8CB;
+    }
+    .price {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #00B2CC;
+    }
+    .duration {
       font-size: 0.9rem;
-      color: #8b949e;
+      margin-bottom: 15px;
+      color: #aaa;
+    }
+    .buy-btn {
+      background-color: #ff2c57;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .buy-btn:hover {
+      background-color: #e82448;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="pricing-table.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Welcome to Trust Tune</h1>
-    <p>Get Premium OTT Subscriptions at the Best Prices</p>
-    <div class="cta-buttons">
-      <a href="pricing-table.html">View Plans</a>
-      <a href="contact.html">Contact Us</a>
+  <div class="container">
+    <h1>All Premium Plans</h1>
+    <div class="plans-grid">
+      <!-- Example Plan Cards -->
+      <div class="plan-card">
+        <h3>Amazon Prime Video: With Shopping</h3>
+        <div class="price">₹150</div>
+        <div class="duration">One-time</div>
+        <a class="buy-btn" href="contact.html?plan=Amazon%20With%20Shopping&price=150">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Netflix: 1 Month Private</h3>
+        <div class="price">₹179</div>
+        <div class="duration">Per Month</div>
+        <a class="buy-btn" href="contact.html?plan=Netflix%201%20Month%20Private&price=179">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>JioHotstar: 1 Month</h3>
+        <div class="price">₹39</div>
+        <div class="duration">Per Month</div>
+        <a class="buy-btn" href="contact.html?plan=Hotstar%201%20Month&price=39">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Canva Pro: 1 Year</h3>
+        <div class="price">₹299</div>
+        <div class="duration">1 Year</div>
+        <a class="buy-btn" href="contact.html?plan=Canva%20Pro%201%20Year&price=299">Buy Now</a>
+      </div>
+      <div class="plan-card">
+        <h3>Adobe Creative Cloud: 1 Year</h3>
+        <div class="price">₹3699</div>
+        <div class="duration">Annual License</div>
+        <a class="buy-btn" href="contact.html?plan=Adobe%20Creative%20Cloud%201%20Year&price=3699">Buy Now</a>
+      </div>
+      <!-- Add all remaining plans as needed below -->
+      <!-- Follow the same <div class="plan-card"> block format -->
     </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Trust Tune. All rights reserved.
-  </footer>
+  </div>
 </body>
 </html>
